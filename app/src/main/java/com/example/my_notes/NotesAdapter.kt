@@ -30,7 +30,7 @@ class NotesAdapter(val arrayList: ArrayList<Note>, val context: Context) : Recyc
         holder.date.text = arrayList[position].date
 
         //Click item to redirect for edit
-        holder.title.setOnClickListener{
+        holder.rvItem.setOnClickListener{
            val databaseHelper = DataBaseHelper(context)
 
             databaseHelper.deleteNote(arrayList[position].id)
@@ -43,6 +43,7 @@ class NotesAdapter(val arrayList: ArrayList<Note>, val context: Context) : Recyc
         val title = view!!.findViewById<TextView>(R.id.tvTitle)
         val description = view!!.findViewById<TextView>(R.id.tvDescription)
         val date = view!!.findViewById<TextView>(R.id.tvDate)
+        val rvItem = view!!.findViewById<LinearLayout>(R.id.rvItem)
     }
 
 }
